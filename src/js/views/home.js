@@ -20,7 +20,7 @@ export const Home = () => {
 				{
 					store.characters.map((character, index) => {
 						return (
-							<Card router={"/character/detail/" + character.uid} name={character.name} key={index} ></Card>
+							<Card router={"/character/detail/" + character.uid} name={character.name} key={index} uid={character.uid} ></Card>
 						)
 					})
 				}

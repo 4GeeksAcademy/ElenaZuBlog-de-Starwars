@@ -5,14 +5,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			planets: [],
 			vehicles: [],
-			personDetail: [] 
+			personDetail: [],
+			favorites: [] 
 
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 
 			getCharacters:  async () => {
 				try {
@@ -60,6 +57,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error);
 				}
 			},
+
+			addFavoriteItem : (name) =>{
+
+				let favorites = getStore().favorites;
+				let isTheElementIncluded = false;
+				let updatedFavoriteList = [...favorites];;
+				for (const element of favorites){
+					if(name==element){
+						isTheElementIncluded = true;
+						break;
+					}
+				};
+				if(!isTheElementIncluded){
+					updatedFavoriteList.push(name);
+				}
+
+				setStore({favorites: updatedFavoriteList});
+			},
+
+			deleteFavorite : (valueToRemove) => {
+				console.log("Trying to remove:", valueToRemove);
+				console.log("Current favorites:", getStore.favorites);
+		
+				let updatedFavoriteList = getStore().favorites.filter((value) => value !== valueToRemove);
+		
+				setStore({favorites: updatedFavoriteList});
+		
+			}
 
 		}
 	};

@@ -31,7 +31,7 @@ const PersonDetail = (props) => {
           </p>
         </div>
       </div>
-      <div className='d-flex justify-content-evenly mt-3' style={{ width: "60%", margin: 'auto' }}>
+      <div className='d-flex justify-content-evenly mt-3 text-danger' style={{ width: "60%", margin: 'auto' }}>
         <div>
           <h5 className='fw-bold'>Gender</h5>
           <h5>{store.personDetail.result  ? store.personDetail.result.properties.gender : ""}</h5>
@@ -39,27 +39,27 @@ const PersonDetail = (props) => {
 
         <div>
           <h5 className='fw-bold'>Birth Year</h5>
-          <h5>dfgdfg fgtrrty</h5>
+          <h5>{store.personDetail.result  ? store.personDetail.result.properties.birth_year : ""}</h5>
         </div>
 
         <div>
-          <h5 className='fw-bold'>Gender</h5>
-          <h5>dfgdfg fgtrrty</h5>
+          <h5 className='fw-bold'>Mass</h5>
+          <h5>{store.personDetail.result  ? store.personDetail.result.properties.mass : ""}</h5>
         </div>
 
         <div>
           <h5 className='fw-bold'>Height</h5>
-          <h5>dfgdfg fgtrrty</h5>
+          <h5>{store.personDetail.result  ? store.personDetail.result.properties.height : ""}</h5>
         </div>
 
         <div>
           <h5 className='fw-bold'>Skin Color</h5>
-          <h5>dfgdfg fgtrrty</h5>
+          <h5>{store.personDetail.result  ? store.personDetail.result.properties.skin_color : ""}</h5>
         </div>
 
         <div>
           <h5 className='fw-bold'>Eye Color</h5>
-          <h5>dfgdfg fgtrrty</h5>
+          <h5>{store.personDetail.result  ? store.personDetail.result.properties.eye_color : ""}</h5>
         </div>
       </div>
     </>
