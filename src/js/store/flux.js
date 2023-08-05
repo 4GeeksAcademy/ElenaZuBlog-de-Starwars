@@ -77,8 +77,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			deleteFavorite : (valueToRemove) => {
-				console.log("Trying to remove:", valueToRemove);
-				console.log("Current favorites:", getStore.favorites);
 		
 				let updatedFavoriteList = getStore().favorites.filter((value) => value !== valueToRemove);
 		
